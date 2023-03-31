@@ -68,22 +68,22 @@
         <h1>Để tra cứu thông tin, quý khách vui lòng nhập chính xác 3 thông tin bên dưới:</h1>
     </header>
     <main>
-        <form>
-            <label for="booking-code">Mã đặt chỗ:</label>
-            <input type="text" id="booking-code" name="booking-code" placeholder="Mã đặt chỗ khi đặt vé">
-          
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Địa chỉ email khi đặt vé">
-          
-            <label for="phone">Điện thoại:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Số điện thoại khi đặt vé">
-          
-            <button type="submit">Tra cứu</button>
-          </form>
-          
-
-        <a href="#">Quên mã đặt chỗ</a>
-    </main>
+        <form class="booking-form">
+          <label for="booking-code">Mã đặt chỗ:</label>
+          <input type="text" id="booking-code" name="booking-code" placeholder="Mã đặt chỗ khi đặt vé" class="input-field">
+            
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Địa chỉ email khi đặt vé" class="input-field">
+            
+          <label for="phone">Điện thoại:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Số điện thoại khi đặt vé" class="input-field">
+            
+          <button type="submit" class="btn-submit">Tra cứu</button>
+        </form>
+                
+        <a href="#" class="forgot-link">Quên mã đặt chỗ</a>
+      </main>
+      
     <script>
         function updateTime() {
             var now = new Date();
