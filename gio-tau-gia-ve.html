@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giờ Tàu - Giá Vé</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+		body {
+			background-image: url("anh-tauu.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+  <style>
+		a {
+			display: inline-block;
+			padding: 10px;
+			background-color: #142c1a;
+			color: #fff;
+			font-size: 16px;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+			transform-origin: center;
+		}
+  
+		a.active,
+		a:hover {
+			background-color: #fff;
+			color: #af7979;
+			transform: scale(1.2);
+		}
+
+		.login-container, .register-container {
+			width: 400px;
+			margin: 50px auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0,0,0,0.1);
+		}
+	</style>
+</head>
+<body>
+	<header>
+        <div id="clock"></div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="search-container">
+          <form action="https://www.google.com/search">
+            <input type="text" placeholder="Search..." name="q" id="search-input">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        
+
+        <nav>
+          <a href="login.html" class="nav-link">Đăng Nhập</a>
+          <a href="index.html" class="nav-link">Tìm vé</a>
+          <a href="tra-cuu-thong-tin-dat-cho.html" class="nav-link">Thông tin đặt chỗ</a>
+          <a href="tra-ve.html" class="nav-link">Trả vé</a>
+          <a href="kiem-tra-ve.html" class="nav-link">Kiểm tra vé</a>
+          <a href="gio-tau-gia-ve.html" class="nav-link">Giờ tàu - Giá vé</a>
+          <a href="khuyen-mai.html" class="nav-link">Khuyến mãi</a>
+          <a href="cac-quy-dinh.html" class="nav-link">Các quy định</a>
+          <a href="huong-dan.html" class="nav-link">Hướng dẫn</a>
+          <a href="lien-he.html" class="nav-link">Liên hệ</a>
+      </nav>
+        
+		<h1>Giờ tàu - giá vé</h1>
+	</header>
+	<main>
+        <div class="container">
+            <form>
+              <div class="form-group">
+                <label for="from">Ga đi:</label>
+                <select id="from" name="from">
+                  <option value="hanoi">Hà Nội</option>
+                  <option value="hochiminh">Thành Phố HCM</option>
+                  <option value="danang">Đà Nẵng</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="to">Ga đến:</label>
+                <select id="to" name="to">
+                  <option value="hanoi">Hà Nội</option>
+                  <option value="hochiminh">Thành Phố HCM</option>
+                  <option value="danang">Đà Nẵng</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="date">Ngày:</label>
+                <input type="date" id="date" name="date">
+              </div>
+              <div class="form-group">
+                <label for="train">Tàu:</label>
+                <select id="train" name="train">
+                  <option value="vanlang">Tàu Văn Lang</option>
+                  <option value="vlu">Tàu VLU</option>
+                  <option value="it">Tàu IT</option>
+                </select>
+              </div>
+              <button type="button" onclick="calculatePrice()">Tìm kiếm</button>
+            </form>
+            <div class="price-container">
+              <p id="price"></p>
+            </div>
+          </div>
+          
+          <script>
+            function calculatePrice() {
+              const from = document.getElementById("from").value;
+              const to = document.getElementById("to").value;
+              const train = document.getElementById("train").value;
+              let price = 0;
+          
+              if (from === "hanoi" && to === "hochiminh") {
+                price = 500000;
+              } else if (from === "hanoi" && to === "danang") {
+                price = 400000;
+              } else if (from === "hochiminh" && to === "hanoi") {
+                price = 500000;
+              } else if (from === "hochiminh" && to === "danang") {
+                price = 300000;
+              } else if (from === "danang" && to === "hanoi") {
+                price = 400000;
+              } else if (from === "danang" && to === "hochiminh") {
+                price = 300000;
+              }
+          
+              document.getElementById("price").innerHTML = `Giá vé: ${price}đ`;
+            }
+          </script>
+          
+          <style>
+            .container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+          
+            .form-group {
+              margin-bottom: 10px;
+            }
+          
+            .price-container {
+              margin-top: 20px;
+            }
+          </style>
+          
+          
+
+          
+	</main>
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var clock = document.getElementById('clock');
+            clock.innerHTML = 'Ngày và giờ hiện tại: ' + now.toLocaleString();
+        }
+
+        setInterval(updateTime, 1); // cập nhật thời gian sau mỗi giây
+
+
+    </script>
+        <script>
+          // Lấy tất cả các liên kết trong menu
+      const links = document.querySelectorAll('.nav-link');
+  
+      // Duyệt qua từng liên kết và gắn sự kiện click cho chúng
+      links.forEach(link => {
+      link.addEventListener('click', (event) => {
+      // Chặn hành động mặc định của thẻ a khi được click
+      event.preventDefault();
+  
+      // Thay đổi style cho liên kết được click
+      links.forEach(link => {
+          link.classList.remove('active');
+      });
+      link.classList.add('active');
+  
+      // Thiết lập opacity cho trang web để tạo hiệu ứng chuyển trang
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+          window.location.href = link.href;
+      }, 500); // Sau 0.5 giây chuyển hướng sang trang mới
+      });
+      });
+  
+      // Tăng opacity để hiển thị nội dung trang web
+      document.addEventListener('DOMContentLoaded', () => {
+      document.body.style.opacity = 1;
+      });
+  
+  
+      </script>
+  
+      <script>
+      const linkss = document.querySelectorAll('.nav-link');
+      const sessionStorageKey = 'pageHasBeenVisited';
+  
+      linkss.forEach(link => {
+      link.addEventListener('click', (event) => {
+      event.preventDefault();
+      sessionStorage.setItem(sessionStorageKey, true);
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+          window.location.href = link.href;
+      }, 500);
+      });
+      });
+  
+      document.addEventListener('DOMContentLoaded', () => {
+      const pageHasBeenVisited = sessionStorage.getItem(sessionStorageKey);
+      if (pageHasBeenVisited) {
+      document.body.classList.add('fade-out');
+      }
+      setTimeout(() => {
+      document.body.classList.remove('fade-out');
+      }, 500);
+      });
+  
+      </script>
+      <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+    
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.forEach(link => link.classList.remove('active'));
+            link.classList.add('active');
+          });
+        });
+      </script>   
+    <script>
+      var searchInput = document.getElementById("search-input");
+      searchInput.addEventListener("keydown", function(event) {
+          if (event.keyCode === 13) {
+              event.preventDefault();
+              var searchQuery = encodeURIComponent(searchInput.value);
+              var searchUrl = "https://www.google.com/search?q=" + searchQuery;
+              window.open(searchUrl, "_blank");
+          }
+      });
+
+
+  </script>
+
+
+</body>
+</html>
