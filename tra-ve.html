@@ -67,22 +67,19 @@
             Nếu quý khách thanh toán bằng tiền mặt, trả sau qua ứng dụng ngân hàng và atm, chuyển khoản hoặc trả vé khi có sự cố bãi bỏ tàu vui lòng thực hiện thủ tục tại các nhà ga, đại lý bán vé.</h1>
     </header>
     <main>
-        <form>
-            <h2 style="font-size: 16px;" >Để hiển thị các vé cần trả, vui lòng điền chính xác 3 thông tin dưới đây :</h2>
-            <label for="booking-code">Mã đặt chỗ:</label>
-            <input type="text" id="booking-code" name="booking-code">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-
-            <label for="phone">Điện thoại:</label>
-            <input type="tel" id="phone" name="phone">
-
-            <button type="submit">Tra cứu</button>
+        <form class="ticket-form">
+          <h2>Để hiển thị các vé cần trả, vui lòng điền chính xác 3 thông tin dưới đây :</h2>
+          <label for="booking-code">Mã đặt chỗ:</label>
+          <input type="text" id="booking-code" name="booking-code">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <label for="phone">Điện thoại:</label>
+          <input type="tel" id="phone" name="phone">
+          <button type="submit">Tra cứu</button>
         </form>
-
         <a href="#">Quên mã đặt chỗ</a>
-    </main>
+      </main>
+      
     <script>
         function updateTime() {
             var now = new Date();
